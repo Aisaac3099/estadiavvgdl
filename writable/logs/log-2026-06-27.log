@@ -1,0 +1,189 @@
+ERROR - 2026-06-27 13:55:28 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-27 13:55:28 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: logistica/get_servicios_activos]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-27 13:55:43 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-27 13:55:43 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: logistica/get_servicios_activos]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-27 13:57:32 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-27 13:57:32 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: logistica/get_servicios_activos]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-27 13:57:41 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-27 13:57:41 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: logistica/get_servicios_activos]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-27 13:57:42 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-27 13:57:42 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: logistica/get_servicios_activos]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-27 13:57:43 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-27 13:57:43 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: logistica/get_servicios_activos]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-27 13:58:51 --> mysqli_sql_exception: Unknown column 'estado' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-27 13:58:51 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: logistica/get_servicios_activos]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Logistica.php(21): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Logistica->get_servicios_activos()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logistica))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

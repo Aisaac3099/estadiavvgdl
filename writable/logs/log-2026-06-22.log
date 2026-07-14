@@ -1,0 +1,133 @@
+CRITICAL - 2026-06-22 14:37:13 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 120.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 3 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:37:55 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:40:39 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:43:46 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:44:00 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:44:17 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:47:16 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:56:43 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 14:57:37 --> ErrorException: Undefined variable $imagenes
+[Method: GET, Route: autos/edit/16]
+in APPPATH\Views\autos\edit.php on line 80.
+ 1 APPPATH\Views\autos\edit.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $imagenes', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php', 80)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 5 APPPATH\Controllers\AutoController.php(81): view('autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('16')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-22 15:09:59 --> Error: Undefined constant "App\Controllers\file"
+[Method: GET, Route: autos/eliminar-imagen/24]
+in APPPATH\Controllers\AutoController.php on line 123.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->eliminarImagen('24')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

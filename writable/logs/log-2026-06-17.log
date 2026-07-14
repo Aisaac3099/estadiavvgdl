@@ -1,0 +1,115 @@
+CRITICAL - 2026-06-17 14:47:54 --> ParseError: syntax error, unexpected token "endforeach"
+[Method: GET, Route: servicios_autos]
+in APPPATH\Views\servicios_autos\index.php on line 109.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/index', [], true)
+ 3 APPPATH\Controllers\ServicioAutoController.php(30): view('servicios_autos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-17 15:33:50 --> ErrorException: Undefined variable $vencidos
+[Method: GET, Route: servicios_autos]
+in APPPATH\Views\servicios_autos\index.php on line 33.
+ 1 APPPATH\Views\servicios_autos\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vencidos', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/index', [], true)
+ 5 APPPATH\Controllers\ServicioAutoController.php(49): view('servicios_autos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-17 15:34:29 --> ErrorException: Undefined variable $vencidos
+[Method: GET, Route: servicios_autos]
+in APPPATH\Views\servicios_autos\index.php on line 33.
+ 1 APPPATH\Views\servicios_autos\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vencidos', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/index', [], true)
+ 5 APPPATH\Controllers\ServicioAutoController.php(49): view('servicios_autos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-17 15:47:28 --> ErrorException: Undefined variable $vencidos
+[Method: GET, Route: servicios_autos]
+in APPPATH\Views\servicios_autos\index.php on line 33.
+ 1 APPPATH\Views\servicios_autos\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vencidos', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/index', [], true)
+ 5 APPPATH\Controllers\ServicioAutoController.php(49): view('servicios_autos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-17 18:02:34 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'videovig_sistem...', 3306, '', 0)
+#1 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 \\VVGDL-SERVER\XAMPP\htdocs\sistema\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 \\VVGDL-SERVER\XAMPP\htdocs\sistema\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-06-17 18:48:43 --> Error: Undefined constant "App\Controllers\PATH"
+[Method: POST, Route: autos/store]
+in APPPATH\Controllers\AutoController.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->store()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-17 19:35:56 --> ErrorException: Undefined variable $autoImagenModel
+[Method: GET, Route: autos]
+in APPPATH\Controllers\AutoController.php on line 53.
+ 1 APPPATH\Controllers\AutoController.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $autoImagenModel', 'C:\\xampp\\htdocs\\sistema\\app\\Controllers\\AutoController.php', 53)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-17 19:38:07 --> ErrorException: Undefined variable $autoImagenModel
+[Method: GET, Route: autos]
+in APPPATH\Controllers\AutoController.php on line 53.
+ 1 APPPATH\Controllers\AutoController.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $autoImagenModel', 'C:\\xampp\\htdocs\\sistema\\app\\Controllers\\AutoController.php', 53)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

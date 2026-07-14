@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba FCM - Sistema Videovigilancia</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { background: #f5f5f5; padding: 20px; border-radius: 10px; }
+        .token { background: #fff; padding: 10px; border: 1px solid #ddd; word-break: break-all; }
+        .btn { background: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .btn:hover { background: #005a87; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compat.js"></script>
+    
+    <script>
+        // CONFIGURACIÓN DIRECTA - SIN FORMULARIO
+        const firebaseConfig = {
+            apiKey: "AIzaSyCPZUJtdDbbsN2XO05MTvvhB9yH4w2Uxnk",
+            authDomain: "sistema.videovigilanciagdl.com.mx",
+            projectId: "sistemavvgdl-f3701",
+            storageBucket: "sistemavvgdl-f3701.firebasestorage.app",
+            messagingSenderId: "1042217658941",
+            appId: "1:1042217658941:web:b64ba1d18d02dfac395854"
+        };
+        
+        const vapidKey = "BHkeYRbi6Dg31Cwj7OGG7K6-U2OMzPPub-2gZYw_dIRowsunBoAjiS2hdkm2v9xL4J_28QuFSN0ujuRnb91aFdM";
+        
+        let currentToken = '';
+        
+        // Inicializar automáticamente al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            inicializarFirebase();
+        });
+        
+        function inicializarFirebase() {
+            try {
+                // Inicializar Firebase
+                const app = firebase.initializeApp(firebaseConfig);
+                const messaging = firebase.messaging();
+                
+                mostrarEstado('🔧 Firebase inicializado', 'success');
+                mostrarEstado('📍 Dominio: sistema.videovigilanciagdl.com.mx', 'success');
+                mostrarEstado('🔑 VAPID Key configurada', 'success');
+                
+                // Solicitar permiso de notificaciones
+                Notification.requestPermission().then((permission) => {
+                    if (permission === 'granted') {
+                        mostrarEstado('✅ Permiso de notificaciones concedido', 'success');
+                        obtenerToken(messaging);
+                    } else {
+                        mostrarEstado('❌ Permiso de notificaciones denegado', 'error');
+                    }
+                });
+                
+            } catch (error) {
+                mostrarEstado('❌ Error inicializando Firebase: ' + error.message, 'error');
+            }
+        }
+        
+        function obtenerToken(messaging) {
+            messaging.getToken({ 
+                vapidKey: vapidKey
+            }).then((token) => {
+                if (token) {
+                    currentToken = token;
+                    document.getElementById('tokenDisplay').textContent = token;
+                    document.getElementById('tokenSection').style.display = 'block';
+                    mostrarEstado('✅ Token FCM obtenido correctamente!', 'success');
+                    console.log('Token FCM:', token);
+                } else {
+                    mostrarEstado('❌ No se pudo obtener el token FCM', 'error');
+                }
+            }).catch((error) => {
+                mostrarEstado('❌ Error: ' + error.message, 'error');
+                console.error('Error detallado:', error);
+            });
+        }
+        
+        
+        function registrarToken() {
+    // Capturar el token directamente del DOM
+    const tokenElement = document.getElementById('tokenDisplay');
+    const currentToken = tokenElement ? tokenElement.textContent.trim() : '';
+
+    console.log('Token a registrar:', currentToken);
+
+    if (!currentToken || currentToken === 'Cargando...') {
+        mostrarEstado('❌ No hay token válido para registrar', 'error');
+        return;
+    }
+
+    fetch('/fcm/registrar', {
+        method: 'POST',
+        headers: {
+            // Es crucial usar 'application/json' si vas a usar JSON.stringify()
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify({
+            fcm_token: currentToken,
+            user_id: 1,
+            dispositivo: 'web'
+        })
+    })
+    // --------------------------------------------------
+    // AHORA EL .then() SIGUE DIRECTAMENTE AL fetch()
+    // --------------------------------------------------
+    .then(response => {
+        // Para depurar la respuesta del servidor:
+        // console.log('Respuesta cruda del servidor:', response); 
+        return response.json();
+    })
+    .then(data => {
+        if (data.status === 'success') {
+            mostrarEstado('✅ ' + data.message, 'success');
+        } else {
+            // Muestra errores del servidor (ej: 'Token FCM requerido')
+            mostrarEstado('❌ Error: ' + data.message, 'error'); 
+        }
+    })
+    .catch(error => {
+        // Muestra errores de red o errores de sintaxis del JSON
+        mostrarEstado('❌ Error de conexión o JSON: ' + error.message, 'error');
+        console.error('Error en fetch:', error);
+    });
+}
+
+
+        function mostrarEstado(mensaje, tipo) {
+            const statusElement = document.getElementById('statusMessage');
+            statusElement.innerHTML += '<div class="' + tipo + '">' + mensaje + '</div>';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🔔 Prueba Notificaciones FCM</h1>
+        <p><strong>Configuración automática - Solo haz clic en "Permitir" cuando el navegador lo pida</strong></p>
+        
+        <div id="tokenSection" style="display: none;">
+            <h3>Token FCM Obtenido:</h3>
+            <div class="token" id="tokenDisplay"></div>
+            <button class="btn" onclick="registrarToken()">Registrar en Sistema</button>
+        </div>
+        
+        <div id="status">
+            <h3>Estado:</h3>
+            <div id="statusMessage"></div>
+        </div>
+    </div>
+</body>
+</html>

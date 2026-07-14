@@ -1,0 +1,124 @@
+CRITICAL - 2026-06-16 13:58:57 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "autos/index.php"
+[Method: GET, Route: autos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('autos/index.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/index', [], true)
+ 3 APPPATH\Controllers\AutoController.php(32): view('autos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 14:51:20 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: autos]
+in APPPATH\Views\autos\index.php on line 95.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/index', [], true)
+ 3 APPPATH\Controllers\AutoController.php(32): view('autos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 14:53:05 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: autos]
+in APPPATH\Views\autos\index.php on line 95.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/index', [], true)
+ 3 APPPATH\Controllers\AutoController.php(32): view('autos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 14:53:11 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: autos]
+in APPPATH\Views\autos\index.php on line 95.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/index', [], true)
+ 3 APPPATH\Controllers\AutoController.php(32): view('autos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 16:16:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "autos/edit.php"
+[Method: GET, Route: autos/edit/3]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('autos/edit.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/edit', [], true)
+ 3 APPPATH\Controllers\AutoController.php(57): view('autos/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->edit('3')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 16:35:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "servicios-autos/index.php"
+[Method: GET, Route: servicios-autos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('servicios-autos/index.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios-autos/index', [], true)
+ 3 APPPATH\Controllers\ServicioAutoController.php(30): view('servicios-autos/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 16:54:19 --> ErrorException: Undefined variable $auto
+[Method: GET, Route: servicios-autos]
+in APPPATH\Views\servicios_autos\index.php on line 91.
+ 1 APPPATH\Views\servicios_autos\index.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $auto', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php', 91)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/index', [], true)
+ 5 APPPATH\Controllers\ServicioAutoController.php(30): view('servicios_autos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 16:54:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "servicios-autos/edit.php"
+[Method: GET, Route: servicios-autos/edit/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('servicios-autos/edit.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios-autos/edit', [], true)
+ 3 APPPATH\Controllers\ServicioAutoController.php(51): view('servicios-autos/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 16:54:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "servicios-autos/edit.php"
+[Method: GET, Route: servicios-autos/edit/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('servicios-autos/edit.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios-autos/edit', [], true)
+ 3 APPPATH\Controllers\ServicioAutoController.php(51): view('servicios-autos/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-16 16:55:35 --> ErrorException: Undefined variable $auto
+[Method: GET, Route: servicios_autos/edit/1]
+in APPPATH\Views\servicios_autos\edit.php on line 36.
+ 1 APPPATH\Views\servicios_autos\edit.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $auto', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\edit.php', 36)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\edit.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/edit', [], true)
+ 5 APPPATH\Controllers\ServicioAutoController.php(51): view('servicios_autos/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

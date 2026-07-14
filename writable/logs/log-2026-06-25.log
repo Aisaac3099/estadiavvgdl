@@ -1,0 +1,196 @@
+ERROR - 2026-06-25 14:20:05 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'videovig_sistem...', 3306, '', 0)
+#1 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(646): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#8 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#9 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#10 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 \\VVGDL-SERVER\XAMPP\htdocs\sistema\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Database\MigrationRunner.php(646): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#7 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#8 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#9 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 \\VVGDL-SERVER\XAMPP\htdocs\sistema\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 \\VVGDL-SERVER\XAMPP\htdocs\sistema\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-06-25 14:20:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: CLI, Route: migrate:status]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `videovig_sistemavvgdl`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+ 5 SYSTEMPATH\Database\MigrationRunner.php(646): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH\Commands\Database\MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 7 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 8 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 9 SYSTEMPATH\Boot.php(388): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-06-25 15:28:09 --> ErrorException: Array to string conversion
+[Method: GET, Route: servicios_autos]
+in APPPATH\Views\servicios_autos\index.php on line 33.
+ 1 APPPATH\Views\servicios_autos\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/index', [], true)
+ 5 APPPATH\Controllers\ServicioAutoController.php(50): view('servicios_autos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-25 15:28:18 --> ErrorException: Undefined variable $servicio
+[Method: GET, Route: servicios_autos]
+in APPPATH\Views\servicios_autos\index.php on line 33.
+ 1 APPPATH\Views\servicios_autos\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $servicio', 'C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sistema\\app\\Views\\servicios_autos\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('servicios_autos/index', [], true)
+ 5 APPPATH\Controllers\ServicioAutoController.php(50): view('servicios_autos/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ServicioAutoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ServicioAutoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-25 16:50:18 --> mysqli_sql_exception: Unknown column 'autos_id' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\AutoController->detalles('2')
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-25 16:50:18 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: autos/detalles/2]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->detalles('2')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-25 17:16:48 --> mysqli_sql_exception: Unknown column 'autos_id' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\AutoController->detalles('4')
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-25 17:16:48 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: autos/detalles/4]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->detalles('4')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-25 17:16:51 --> mysqli_sql_exception: Unknown column 'autos_id' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\AutoController->detalles('4')
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-25 17:16:51 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: autos/detalles/4]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->detalles('4')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-06-25 17:18:18 --> mysqli_sql_exception: Unknown column 'autos_id' in 'where clause' in C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sistema\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sistema\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sistema\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema\app\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema\system\CodeIgniter.php(933): App\Controllers\AutoController->detalles('2')
+#8 C:\xampp\htdocs\sistema\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+#9 C:\xampp\htdocs\sistema\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-06-25 17:18:18 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: autos/detalles/2]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\AutoController.php(145): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->detalles('2')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-25 17:20:16 --> Error: Undefined constant "imagen"
+[Method: GET, Route: autos/detalles/16]
+in APPPATH\Views\autos\detalles.php on line 39.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('autos/detalles', [], true)
+ 4 APPPATH\Controllers\AutoController.php(147): view('autos/detalles', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AutoController->detalles('16')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AutoController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

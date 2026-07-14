@@ -1,0 +1,50 @@
+[21-Mar-2026 22:02:50 America/Mexico_City] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php:47
+Stack trace:
+#0 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php(47): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(347): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(106): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 400)
+#4 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\HTTP\Exceptions\BadRequestException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 400, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\HTTP\Exceptions\BadRequestException))
+#6 {main}
+  thrown in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php on line 47
+[15-Apr-2026 13:05:31 America/Mexico_City] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php:47
+Stack trace:
+#0 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php(47): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(347): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(106): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 400)
+#4 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\HTTP\Exceptions\BadRequestException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 400, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\HTTP\Exceptions\BadRequestException))
+#6 {main}
+  thrown in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php on line 47
+[15-Apr-2026 13:09:37 America/Mexico_City] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php:47
+Stack trace:
+#0 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php(47): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(347): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(106): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 400)
+#4 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\HTTP\Exceptions\BadRequestException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 400, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\HTTP\Exceptions\BadRequestException))
+#6 {main}
+  thrown in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php on line 47
+[22-Apr-2026 00:22:50 America/Mexico_City] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php:47
+Stack trace:
+#0 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php(47): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(347): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(106): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 400)
+#4 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\HTTP\Exceptions\BadRequestException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 400, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\HTTP\Exceptions\BadRequestException))
+#6 {main}
+  thrown in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php on line 47
+[22-Apr-2026 00:27:19 America/Mexico_City] PHP Fatal error:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php:47
+Stack trace:
+#0 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php(47): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(347): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/API/ResponseTrait.php(106): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 400)
+#4 /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Debug/Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\HTTP\Exceptions\BadRequestException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 400, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\HTTP\Exceptions\BadRequestException))
+#6 {main}
+  thrown in /home1/videovig/sistema.videovigilanciagdl.com.mx/system/Format/JSONFormatter.php on line 47
