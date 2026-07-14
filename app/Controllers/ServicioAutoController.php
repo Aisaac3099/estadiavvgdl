@@ -8,6 +8,10 @@ class ServicioAutoController extends BaseController
 {
     protected $servicioModel;
     protected $autoModel;
+    protected $evidenciaModel;
+
+    private array $tiposRegistroPermitidos = ['unico', 'periodico', 'por_asignar'];
+    private array $estadosServicioPermitidos = ['material_comprado', 'en_proceso', 'realizado', 'cancelado'];
 
     public function __construct()
     {
@@ -18,18 +22,16 @@ class ServicioAutoController extends BaseController
 
     public function index()
     {
-        $data ['autos'] = $this->autoModel->where('activo', 1)->findAll(); // obtiene todos los autos
-        
-        $data ['servicios'] = $this->servicioModel->select( // obtiene los servicios
+        $data ['autos'] = $this->autoModel->where('activo', 1)->findAll();
+        $data ['servicios'] = $this->servicioModel->select(
             'servicios_autos.*,
             autos.alias, 
             autos.placas,
             autos.marca,
-            autos.modelo' // el * trae todas las columnas de la tabla servicios_autos
+            autos.modelo'
         )
-        ->join('autos', 'autos.id = servicios_autos.auto_id') //une dos tablas, que ambas id del auto coincidan
+        ->join('autos', 'autos.id = servicios_autos.auto_id')
         ->findAll();
-
 
         $totalServicios = count($data['servicios']);
         $vencidos = 0;
@@ -39,19 +41,18 @@ class ServicioAutoController extends BaseController
         
         foreach ($data ['servicios']as $servicio){
             if (empty($servicio['proximo_servicio'])){
-            $noAplica++;
-        }else{
-
-            $hoy = date('Y-m-d');
-            $diasRestantes = floor((strtotime($servicio['proximo_servicio'])-strtotime($hoy))/86400);
-            if ($diasRestantes <0){
-                $vencidos++;
-            }elseif($diasRestantes <=30){
-                $porVencer++;
+                $noAplica++;
             }else{
-                $vigentes++;
+                $hoy = date('Y-m-d');
+                $diasRestantes = floor((strtotime($servicio['proximo_servicio'])-strtotime($hoy))/86400);
+                if ($diasRestantes <0){
+                    $vencidos++;
+                }elseif($diasRestantes <=30){
+                    $porVencer++;
+                }else{
+                    $vigentes++;
+                }
             }
-        }
         }
         $data['totalServicios'] = $totalServicios;
         $data['vencidos'] = $vencidos;
@@ -62,154 +63,77 @@ class ServicioAutoController extends BaseController
         return view ('servicios_autos/index', $data);
     }
 
-    public function store () // el metodo para guardar servicios
+    public function store()
     {
         $tipoRegistro = $this->request->getPost('tipo_registro');
+        $validacion = $this->validarDatosServicio($tipoRegistro);
+        if ($validacion !== true) {
+            return $validacion;
+        }
 
-            $categoriaServicio = null;
-            $tipoServicio = null;
+        $datosServicio = $this->prepararDatosServicio($tipoRegistro);
 
-            if ($tipoRegistro === 'periodico') {
-                $categoriaServicio = $this->request->getPost('categoria_servicio');
+        if(!$this->servicioModel->insert($datosServicio)){
+            return redirect()->back()->with('error', 'No se pudo registrar el servicio')->withInput();
+        }
+        $servicioId= $this->servicioModel->getInsertID();
+        $this->guardarEvidencias($servicioId);
 
-                $tipoServicio = $this->request->getPost('tipo_servicio_select');
-
-                if ($tipoServicio === 'Otro') {
-                    $tipoServicio = $this->request->getPost('tipo_servicio_otro');
-                }
-                
-            }elseif($tipoRegistro==='por_asignar'){
-                $tipoServicio=$this->request->getPost('tipo_servicio');
-                if(empty($tipoServicio)){
-                    $tipoServicio = $this->request->getPost('tipo_servicio_texto');
-                }
-            }else {
-                $tipoServicio = $this->request->getPost('tipo_servicio_texto');
-            }
-
-            $proximoServicio = $this->request->getPost('proximo_servicio');
-
-            if ($tipoRegistro==='por_asignar' && empty($proximoServicio)) {
-                return redirect()->back()->with('error', 'Debe seleccionar una fecha para programar el servicio.')->withInput();}
-                if (empty($proximoServicio)){
-                $proximoServicio = null;
-            }
-            $fechaServicio = $this->request->getPost('fecha_servicio');
-            if(empty($fechaServicio)){
-                $fechaServicio = date('Y-m-d');
-            }
-            $estadoServicio = $this->request->getPost('estado_servicio');
-            $observacionEstado = $this->request->getPost('observacionEstado');
-            if ($tipoRegistro ==='por_asignar'){
-                $estadoServicio = null;
-                $observacionEstado = null;
-            }
-            $data = [
-                'auto_id' => $this->request->getPost('auto_id'),
-                'fecha_servicio' => $fechaServicio,
-                'tipo_registro' => $tipoRegistro,
-                'estado_servicio' => $estadoServicio,
-                'observacion_estado' => $observacionEstado, 
-                'categoria_servicio' => $categoriaServicio,
-                'tipo_servicio' => $tipoServicio,
-                'descripcion' => $this->request->getPost('descripcion'),
-                'proximo_servicio' => $proximoServicio,
-            ];
-
-            if(!$this->servicioModel->insert($data)){
-                return redirect()->back()->with('error', 'No se pudo registrar el servicio');
-            }
-            $servicioId= $this->servicioModel->getInsertID();
-            $evidencias = $this->request->getFiles();
-            if(isset($evidencias['evidencias'])){
-                foreach ($evidencias['evidencias'] as $evidencia){
-                    if ($evidencia->isValid() && ! $evidencia->hasMoved()){
-                        $nombreArchivo = $evidencia->getRandomName();
-                        $evidencia->move(
-                            FCPATH. 'public/uploads/servicios_autos/',
-                            $nombreArchivo
-                        );
-                        $this->evidenciaModel->insert([
-                            'servicio_auto_id' => $servicioId, 'archivo' =>$nombreArchivo
-                        ]);
-                    }
-                }
-            }
         if ($this->request->getPost('origen')==='programar'){
             return redirect()->to(base_url('autos'))->with('success', 'Servicio Programado correctamente');
         }
         return redirect()->back()->with('success', 'Servicio Registrado correctamente');
     }
 
-
     public function edit($id)
-        {
-           $data['servicio'] = $this->servicioModel->find($id);
-           if(!$data['servicio']){
-            throw
-            \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-           }
-           $data['esPendiente'] = ($data['servicio']['tipo_registro']=='por_asignar');
-           $data['evidencias'] = $this->evidenciaModel->where('servicio_auto_id', $id)->findAll();
-            return view('servicios_autos/edit', $data);
+    {
+        $data['servicio'] = $this->servicioModel->find($id);
+        if(!$data['servicio']){
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
+        $data['esPendiente'] = ($data['servicio']['tipo_registro']=='por_asignar');
+        $data['evidencias'] = $this->evidenciaModel->where('servicio_auto_id', $id)->findAll();
+        return view('servicios_autos/edit', $data);
+    }
 
     public function update($id)
     {
-        $tipoRegistro = $this->request->getPost('tipo_registro');
-
-        $proximoServicio=$this->request->getPost('proximo_servicio');
-        if($tipoRegistro==='unico'){
-            $proximoServicio = null;
-            }elseif (empty($proximoServicio)){
-            $proximoServicio = null;
+        $servicio = $this->servicioModel->find($id);
+        if (!$servicio) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
-        $data = [
-            'fecha_servicio' => $this->request->getPost('fecha_servicio'),
-            'tipo_servicio' => $this->request->getPost('tipo_servicio'),
-            'tipo_registro' => $tipoRegistro,
-            'descripcion' => $this->request->getPost('descripcion'),
-            'proximo_servicio' => $proximoServicio
-        ];
 
-        $this->servicioModel->update($id, $data);
+        $tipoRegistro = $this->request->getPost('tipo_registro');
+        $validacion = $this->validarDatosServicio($tipoRegistro, $id);
+        if ($validacion !== true) {
+            return $validacion;
+        }
 
-        $evidencias = $this->request->getFiles();
-            if(isset($evidencias['evidencias'])){
-                foreach ($evidencias['evidencias'] as $evidencia){
-                    if ($evidencia->isValid() && ! $evidencia->hasMoved()){
-                        $nombreArchivo = $evidencia->getRandomName();
-                        $evidencia->move(
-                            FCPATH. 'public/uploads/servicios_autos/',
-                            $nombreArchivo
-                        );
-                        $this->evidenciaModel->insert([
-                            'servicio_auto_id' => $id, 'archivo' =>$nombreArchivo
-                        ]);
-                    }
-                }
-            }
+        $datosServicio = $this->prepararDatosServicio($tipoRegistro, $servicio);
 
-        return redirect()->to(base_url('servicios_autos'))->with('success', 'Servicio Actualizado Exitosamenteamente');
+        if (!$this->servicioModel->update($id, $datosServicio)) {
+            return redirect()->back()->with('error', 'No se pudo actualizar el servicio. Revise los datos e intente nuevamente.')->withInput();
+        }
+
+        $this->guardarEvidencias($id);
+
+        return redirect()->to(base_url('servicios_autos'))->with('success', 'Servicio Actualizado Exitosamente');
     }
 
     public function programar ($auto_id){
         $auto = $this->autoModel->find($auto_id);
         if (!$auto){
-            throw
-            \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
         $data['auto']=$auto;
         return view('servicios_autos/programar', $data);
-
     }
 
     public function detalles ($id)
     {
         $servicio = $this->servicioModel->find($id);
         if(!$servicio){
-            throw
-            CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
         $auto = $this->autoModel->find($servicio['auto_id']);
         $evidencias = $this->evidenciaModel->where('servicio_auto_id', $id)->findAll();
@@ -234,5 +158,110 @@ class ServicioAutoController extends BaseController
             $this->evidenciaModel->delete($id);
         }
         return redirect()->back()->with('success', 'Evidencia eliminada correctamente');
+    }
+
+    private function validarDatosServicio($tipoRegistro, $id = null)
+    {
+        if (!in_array($tipoRegistro, $this->tiposRegistroPermitidos, true)) {
+            return redirect()->back()->with('error', 'Seleccione un tipo de registro válido.')->withInput();
+        }
+
+        $autoId = $this->request->getPost('auto_id');
+        if ($autoId !== null && $autoId !== '' && !$this->autoModel->find($autoId)) {
+            return redirect()->back()->with('error', 'Seleccione un auto válido.')->withInput();
+        }
+
+        if ($id === null && (empty($autoId) || !$this->autoModel->find($autoId))) {
+            return redirect()->back()->with('error', 'Seleccione un auto válido.')->withInput();
+        }
+
+        if ($tipoRegistro === 'por_asignar' && empty($this->request->getPost('proximo_servicio'))) {
+            return redirect()->back()->with('error', 'Debe seleccionar una fecha para programar el servicio.')->withInput();
+        }
+
+        if ($tipoRegistro !== 'por_asignar') {
+            $estadoServicio = $this->request->getPost('estado_servicio');
+            if (empty($estadoServicio) || !in_array($estadoServicio, $this->estadosServicioPermitidos, true)) {
+                return redirect()->back()->with('error', 'Seleccione un estado del servicio válido.')->withInput();
+            }
+        }
+
+        return true;
+    }
+
+    private function prepararDatosServicio($tipoRegistro, array $servicioActual = null): array
+    {
+        $categoriaServicio = null;
+        $tipoServicio = null;
+
+        if ($tipoRegistro === 'periodico') {
+            $categoriaServicio = $this->request->getPost('categoria_servicio');
+            $tipoServicio = $this->request->getPost('tipo_servicio_select') ?: $this->request->getPost('tipo_servicio');
+            if ($tipoServicio === 'Otro') {
+                $tipoServicio = $this->request->getPost('tipo_servicio_otro');
+            }
+        } elseif ($tipoRegistro === 'por_asignar') {
+            $tipoServicio = $this->request->getPost('tipo_servicio') ?: $this->request->getPost('tipo_servicio_texto');
+        } else {
+            $tipoServicio = $this->request->getPost('tipo_servicio_texto') ?: $this->request->getPost('tipo_servicio');
+        }
+
+        $proximoServicio = $this->request->getPost('proximo_servicio');
+        if ($tipoRegistro === 'unico' || empty($proximoServicio)) {
+            $proximoServicio = null;
+        }
+
+        $fechaServicio = $this->request->getPost('fecha_servicio');
+        if(empty($fechaServicio)){
+            $fechaServicio = date('Y-m-d');
+        }
+
+        $estadoServicio = $this->request->getPost('estado_servicio');
+        $observacionEstado = $this->request->getPost('observacion_estado');
+        if ($tipoRegistro === 'por_asignar'){
+            $estadoServicio = null;
+            $observacionEstado = null;
+        } elseif ($observacionEstado === '') {
+            $observacionEstado = null;
+        }
+
+        $data = [
+            'fecha_servicio' => $fechaServicio,
+            'tipo_registro' => $tipoRegistro,
+            'estado_servicio' => $estadoServicio,
+            'observacion_estado' => $observacionEstado,
+            'categoria_servicio' => $categoriaServicio,
+            'tipo_servicio' => $tipoServicio,
+            'descripcion' => $this->request->getPost('descripcion'),
+            'proximo_servicio' => $proximoServicio,
+        ];
+
+        $autoId = $this->request->getPost('auto_id');
+        if ($autoId !== null && $autoId !== '') {
+            $data['auto_id'] = $autoId;
+        } elseif ($servicioActual && isset($servicioActual['auto_id'])) {
+            $data['auto_id'] = $servicioActual['auto_id'];
+        }
+
+        return $data;
+    }
+
+    private function guardarEvidencias($servicioId): void
+    {
+        $evidencias = $this->request->getFiles();
+        if(isset($evidencias['evidencias'])){
+            foreach ($evidencias['evidencias'] as $evidencia){
+                if ($evidencia->isValid() && ! $evidencia->hasMoved()){
+                    $nombreArchivo = $evidencia->getRandomName();
+                    $evidencia->move(
+                        FCPATH. 'public/uploads/servicios_autos/',
+                        $nombreArchivo
+                    );
+                    $this->evidenciaModel->insert([
+                        'servicio_auto_id' => $servicioId, 'archivo' =>$nombreArchivo
+                    ]);
+                }
+            }
+        }
     }
 }

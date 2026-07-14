@@ -142,8 +142,9 @@
                                         <th>Tipo Servicio</th>
                                         <th>Descripción</th>
                                         <th>Fecha Servicio</th>
-                                        <th>Próximo Servicio</th>
                                         <th>Estado del Servicio</th>
+                                        <th>Próximo Servicio</th>
+                                        <th>Estado Próximo Servicio</th>
                                         <th>EstadoFiltro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -180,7 +181,33 @@
                                                 <td><?= esc($servicio['tipo_servicio']) ?></td>
                                                 <td><?= esc($servicio['descripcion']) ?></td>
                                                 <td><?= esc($servicio['fecha_servicio']) ?></td>
-                                                <td><?= esc($servicio['proximo_servicio']) ?></td>
+                                                <td>
+                                                    <?php
+                                                        $estadoLabels = [
+                                                            'material_comprado' => ['Material comprado', 'badge-info'],
+                                                            'en_proceso' => ['En proceso', 'badge-warning'],
+                                                            'realizado' => ['Realizado', 'badge-success'],
+                                                            'cancelado' => ['Cancelado', 'badge-dark'],
+                                                        ];
+                                                    ?>
+                                                    <?php if ($servicio['tipo_registro'] == 'por_asignar'): ?>
+                                                        <span class="badge badge-warning">Por asignar</span>
+                                                    <?php elseif (!empty($servicio['estado_servicio']) && isset($estadoLabels[$servicio['estado_servicio']])): ?>
+                                                        <span class="badge <?= $estadoLabels[$servicio['estado_servicio']][1] ?>"><?= $estadoLabels[$servicio['estado_servicio']][0] ?></span>
+                                                        <?php if (!empty($servicio['observacion_estado'])): ?>
+                                                            <small class="d-block text-muted mt-1"><?= esc($servicio['observacion_estado']) ?></small>
+                                                        <?php endif; ?>
+                                                    <?php else: ?>
+                                                        <span class="badge badge-secondary">Sin estado registrado</span>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <td>
+                                                    <?php if (empty($servicio['proximo_servicio'])): ?>
+                                                        <span class="badge badge-secondary">No aplica</span>
+                                                    <?php else: ?>
+                                                        <?= date('d/m/Y', strtotime($servicio['proximo_servicio'])) ?>
+                                                    <?php endif; ?>
+                                                </td>
 
 
                                                 <!--<td><?php $hoy = date('Y-m-d');?>
@@ -196,30 +223,13 @@
 
 
                                                 <td>
-                                                    <?php if ($servicio['tipo_registro'] == 'por_asignar'): ?>
-
-                                                        <?php
-                                                        $hoy = date('Y-m-d');
-                                                        $diasRestantes = floor((strtotime($servicio['proximo_servicio'])-strtotime($hoy))/86400);?>
-                                                        <?php if ($diasRestantes < 0): ?>
-                                                            <span class="badge badge-danger">Vencido (<?= abs($diasRestantes) ?> días)</span>
-                                                        <?php elseif ($diasRestantes <= 30): ?>
-                                                            <span class="badge badge-warning">Por Vencer (<?= $diasRestantes ?> días)</span>
-                                                        <?php else: ?>
-                                                            <span class="badge badge-success">Vigente (<?= $diasRestantes ?> días)</span>
-                                                        <?php endif; ?>
-
-                                                        <?php elseif (empty($servicio['proximo_servicio'])):?>
-
-                                                            <span class="badge badge-secondary">No Aplica</span>
-
+                                                    <?php if (empty($servicio['proximo_servicio'])): ?>
+                                                        <span class="badge badge-secondary">No Aplica</span>
                                                     <?php else: ?>
-
                                                         <?php
-                                                            $hoy = date('Y-m-d');
-                                                            $diasRestantes = floor((strtotime($servicio['proximo_servicio']) - strtotime($hoy)) / 86400);
+                                                            $hoy=date('Y-m-d');
+                                                            $diasRestantes = floor((strtotime($servicio['proximo_servicio'])-strtotime($hoy))/86400);
                                                         ?>
-
                                                         <?php if ($diasRestantes < 0): ?>
                                                             <span class="badge badge-danger">Vencido (<?= abs($diasRestantes) ?> días)</span>
                                                         <?php elseif ($diasRestantes <= 30): ?>
@@ -227,35 +237,24 @@
                                                         <?php else: ?>
                                                             <span class="badge badge-success">Vigente (<?= $diasRestantes ?> días)</span>
                                                         <?php endif; ?>
-
                                                     <?php endif; ?>
                                                 </td>
                                                 <td>
-                                                    <?php if ($servicio['tipo_registro']=='por_asignar'):?>
+                                                    <?php if (empty($servicio['proximo_servicio'])): ?>
+                                                        No Aplica
+                                                    <?php else: ?>
                                                         <?php
-                                                        $hoy=date('Y-m-d');
-                                                                $diasRestantes = floor((strtotime($servicio['proximo_servicio'])-strtotime($hoy))/86400);?>
-                                                                <?php if ($diasRestantes < 0):?>
-                                                                    Vencido
-                                                                    <?php elseif ($diasRestantes <= 30):?>
-                                                                    Por Vencer
-                                                                    <?php else:?>
-                                                                        Vigente
-                                                                        <?php endif;?> 
-                                                        <?php elseif(empty($servicio['proximo_servicio'])):?>
-                                                            No Aplica
-                                                            <?php else:?>
-                                                                <?php
-                                                                $hoy=date('Y-m-d');
-                                                                $diasRestantes = floor((strtotime($servicio['proximo_servicio'])-strtotime($hoy))/86400);?>
-                                                                <?php if ($diasRestantes < 0):?>
-                                                                    Vencido
-                                                                    <?php elseif ($diasRestantes <= 30):?>
-                                                                    Por Vencer
-                                                                    <?php else:?>
-                                                                        Vigente
-                                                                        <?php endif;?>
-                                                    <?php endif;?>
+                                                            $hoy=date('Y-m-d');
+                                                            $diasRestantes = floor((strtotime($servicio['proximo_servicio'])-strtotime($hoy))/86400);
+                                                        ?>
+                                                        <?php if ($diasRestantes < 0): ?>
+                                                            Vencido
+                                                        <?php elseif ($diasRestantes <= 30): ?>
+                                                            Por Vencer
+                                                        <?php else: ?>
+                                                            Vigente
+                                                        <?php endif; ?>
+                                                    <?php endif; ?>
                                                 </td>
                                                 <td>
                                                     <?php if ($servicio['tipo_registro'] == 'por_asignar'):?>
@@ -277,7 +276,7 @@
                                     <?php else: ?>
 
                                         <tr>
-                                            <td colspan="10" class="text-center">
+                                            <td colspan="11" class="text-center">
                                                 No existen servicios registrados
                                             </td>
                                         </tr>
@@ -456,7 +455,7 @@
                         <option value="" selected disabled>Seleccione un estado</option>
                     <option value="material_comprado">Material Comprado</option>
                     <option value="en_proceso">En Proceso</option>
-                    <option value="reaizado">Realizado</option>
+                    <option value="realizado">Realizado</option>
                     <option value="cancelado">Cancelado</option>
                 </select>
                         </div>
@@ -493,42 +492,6 @@
         </div>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-    const labelProximoServicio = document.getElementById('labelProximoServicio');
-    const tipoRegistro = document.getElementById('tipo_registro');
-    const grupoProximoServicio = document.getElementById('grupoProximoServicio');
-    const proximoServicio = document.getElementById('proximo_servicio');
-    const grupoEvidencias= document.getElementById('grupoEvidencias');
-
-    function actualizarFormularioServicio() {
-        if (!tipoRegistro || !grupoProximoServicio) return;
-
-        if (tipoRegistro.value === 'unico') {
-            grupoProximoServicio.style.display = 'none';
-            grupoEvidencias.style.display='block';
-            proximoServicio.required = false;
-            labelProximoServicio.textContent = 'Proximo Servicio'; 
-        } else if (tipoRegistro.value === 'periodico'){
-            grupoProximoServicio.style.display = 'block';
-            grupoEvidencias.style.display='block';
-            proximoServicio.required = false;
-            labelProximoServicio.textContent = 'Proximo Servicio (Opcional)';
-        }else if (tipoRegistro.value === 'por_asignar'){
-            grupoProximoServicio.style.display = 'block';
-            grupoEvidencias.style.display='none';
-            proximoServicio.required = true;
-            labelProximoServicio.textContent = 'Proximo Servicio';
-        }
-    }
-
-    actualizarFormularioServicio();
-
-    tipoRegistro.addEventListener('change', actualizarFormularioServicio);
-});
-</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -654,7 +617,7 @@ document.addEventListener('DOMContentLoaded', function () {
             grupoDescripcion.style.display = 'block';
             grupoEstadoServicio.style.display = 'block';
             grupoObservacionEstado.style.display = 'block';
-            estadoServicio.requiered = true;
+            estadoServicio.required = true;
 
             tipoServicioTexto.required = true;
         }
@@ -667,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function () {
             grupoDescripcion.style.display = 'none';
             grupoEstadoServicio.style.display = 'block';
             grupoObservacionEstado.style.display = 'block';
-            estadoServicio.requiered = true;
+            estadoServicio.required = true;
 
             categoria.required = true;
             tipoServicioSelect.required = true;
@@ -684,12 +647,12 @@ document.addEventListener('DOMContentLoaded', function () {
             
             grupoEstadoServicio.style.display = 'none';
             grupoObservacionEstado.style.display = 'none';
-            estadoServicio.requiered = false;
+            estadoServicio.required = false;
             estadoServicio.value = '';
             observacionEstado.value = '';
 
             tipoServicioTexto.required = true;
-            proximoServicio.required = false;
+            proximoServicio.required = true;
         }
     }
 
@@ -708,11 +671,11 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
     $(document).ready(function(){
         var tabla = $('#example1').DataTable();
-        tabla.column(8).visible(false);
+        tabla.column(9).visible(false);
         $('.filtro-card').on('click', function(){
             var estado = $(this).data('estado');
             tabla
-            .column(8)
+            .column(9)
             .search(estado)
             .draw();
         })
