@@ -102,6 +102,16 @@
             </ul>
           </li>
 
+          <!-- Isaac Gonzalez Agrego para inventario: acceso directo al módulo desde la barra lateral -->
+          <li class="nav-item">
+            <a href="<?= base_url('inventario') ?>" class="nav-link">
+              <i class="fas fa-boxes"></i>
+              <p>
+                Inventario
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a href="<?= base_url('tecnicos') ?>" class="nav-link">   
               <i class="fas fa-hard-hat"></i>  

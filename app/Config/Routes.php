@@ -122,6 +122,16 @@ $routes->group('', ['filter' => 'auth'], function($routes){
     $routes->get('servicios_autos/detalles/(:num)', 'ServicioAutoController::detalles/$1');
     $routes->get('servicios_autos/eliminar-evidencia/(:num)', 'ServicioAutoController::eliminarEvidencia/$1');
 
+    // Isaac Gonzalez Agrego para inventario: rutas del CRUD básico del módulo de inventario
+    $routes->get('inventario', 'InventarioController::index');
+    $routes->post('inventario/store', 'InventarioController::store');
+    $routes->get('inventario/edit/(:num)', 'InventarioController::edit/$1');
+    $routes->post('inventario/update/(:num)', 'InventarioController::update/$1');
+    $routes->get('inventario/detalles/(:num)', 'InventarioController::detalles/$1');
+    $routes->get('inventario/baja/(:num)', 'InventarioController::baja/$1');
+    $routes->get('inventario/reactivar/(:num)', 'InventarioController::reactivar/$1');
+    $routes->get('inventario/eliminar-foto/(:num)', 'InventarioController::eliminarFoto/$1');
+
 
     // rutas notificaciones
     $routes->get('notificaciones/leer/(:num)', 'NotificacionController::leer/$1');
