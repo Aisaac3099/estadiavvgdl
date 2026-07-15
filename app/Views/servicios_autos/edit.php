@@ -32,6 +32,9 @@ $categorias = ['Mecánico', 'Eléctrico', 'Suspensión', 'Frenos', 'Llantas', 'O
         </select>
     </div>
 <?php else: ?>
+    <?php if (!empty($esRealizarMaterialComprado)): ?>
+        <div class="alert alert-info">Este servicio tiene material comprado. Actualiza los datos necesarios y selecciona el nuevo estado del servicio.</div>
+    <?php endif; ?>
     <input type="hidden" name="tipo_registro" id="tipo_registro_realizar" value="<?= esc($servicio['tipo_registro']) ?>">
 <?php endif; ?>
 
@@ -105,7 +108,7 @@ $categorias = ['Mecánico', 'Eléctrico', 'Suspensión', 'Frenos', 'Llantas', 'O
 </div>
 
 <div class="card-footer">
-    <button type="submit" class="btn btn-<?= $esPendiente ? 'success' : 'primary' ?>"><?= $esPendiente ? 'Realizar Servicio' : 'Guardar Cambios' ?></button>
+    <button type="submit" class="btn btn-<?= !empty($esModoRealizar) ? 'success' : 'primary' ?>"><?= !empty($esModoRealizar) ? 'Realizar Servicio' : 'Guardar Cambios' ?></button>
     <a href="<?= base_url('servicios_autos') ?>" class="btn btn-secondary">Cancelar</a>
 </div>
 </form>

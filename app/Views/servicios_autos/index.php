@@ -43,6 +43,7 @@
                 </button>
             </div>
             <?php endif;?>
+            <h5 class="mb-2">Estado del próximo servicio</h5>
             <div class="row"><!--Inicio Vista de estados-->
                 <div class="col-lg-2 col-6">
                     <div class="small-box bg-info filtro-card" data-estado="" style="cursor:pointer;">
@@ -88,18 +89,34 @@
                         </div>
                     </div>
                 </div>
-                    <div class="col-lg-2 col-6">
-                    <div class="small-box bg-dark filtro-card" data-estado="No Aplica" style="cursor:pointer;">
-                        <div class="inner">
-                            <h3><?= $noAplica?></h3>
-                            <p>No Aplican</p>
-                        </div>
-                        <div class="icon">
-                            <i class= "fas fa-minus-circle"></i>
-                        </div>
+                </div><!-- Fin vista de estados-->
+            <h5 class="mb-2">Estado del servicio</h5>
+            <div class="row"><!--Inicio Vista de estados del servicio-->
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-info filtro-servicio-card" data-estado-servicio="material_comprado" style="cursor:pointer;">
+                        <div class="inner"><h3><?= $materialComprado ?></h3><p>Material comprado</p></div>
+                        <div class="icon"><i class="fas fa-shopping-cart"></i></div>
                     </div>
                 </div>
-                </div><!-- Fin vista de estados-->
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-warning filtro-servicio-card" data-estado-servicio="en_proceso" style="cursor:pointer;">
+                        <div class="inner"><h3><?= $enProceso ?></h3><p>En proceso</p></div>
+                        <div class="icon"><i class="fas fa-tools"></i></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-success filtro-servicio-card" data-estado-servicio="realizado" style="cursor:pointer;">
+                        <div class="inner"><h3><?= $realizados ?></h3><p>Realizados</p></div>
+                        <div class="icon"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-dark filtro-servicio-card" data-estado-servicio="cancelado" style="cursor:pointer;">
+                        <div class="inner"><h3><?= $cancelados ?></h3><p>Cancelados</p></div>
+                        <div class="icon"><i class="fas fa-ban"></i></div>
+                    </div>
+                </div>
+            </div><!-- Fin vista de estados del servicio-->
             <div class="row">
                 <div class="col-12">
 
@@ -146,6 +163,7 @@
                                         <th>Próximo Servicio</th>
                                         <th>Estado Próximo Servicio</th>
                                         <th>EstadoFiltro</th>
+                                        <th>EstadoServicioFiltro</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -224,7 +242,7 @@
 
                                                 <td>
                                                     <?php if (empty($servicio['proximo_servicio'])): ?>
-                                                        <span class="badge badge-secondary">No Aplica</span>
+                                                        <span class="text-muted">—</span>
                                                     <?php else: ?>
                                                         <?php
                                                             $hoy=date('Y-m-d');
@@ -256,8 +274,9 @@
                                                         <?php endif; ?>
                                                     <?php endif; ?>
                                                 </td>
+                                                <td><?= esc($servicio['estado_servicio'] ?? '') ?></td>
                                                 <td>
-                                                    <?php if ($servicio['tipo_registro'] == 'por_asignar'):?>
+                                                    <?php if ($servicio['tipo_registro'] == 'por_asignar' || ($servicio['estado_servicio'] ?? null) === 'material_comprado'):?>
                                                 <a href="<?= base_url('servicios_autos/edit/'.$servicio['id'])?>"class="btn btn-success btn-sm">
                                                     Realizar
                                                 </a>
@@ -276,7 +295,7 @@
                                     <?php else: ?>
 
                                         <tr>
-                                            <td colspan="11" class="text-center">
+                                            <td colspan="12" class="text-center">
                                                 No existen servicios registrados
                                             </td>
                                         </tr>
@@ -672,12 +691,16 @@ document.addEventListener('DOMContentLoaded', function () {
     $(document).ready(function(){
         var tabla = $('#example1').DataTable();
         tabla.column(9).visible(false);
+        tabla.column(10).visible(false);
         $('.filtro-card').on('click', function(){
             var estado = $(this).data('estado');
-            tabla
-            .column(9)
-            .search(estado)
-            .draw();
-        })
+            tabla.column(10).search('');
+            tabla.column(9).search(estado).draw();
+        });
+        $('.filtro-servicio-card').on('click', function(){
+            var estadoServicio = $(this).data('estado-servicio');
+            tabla.column(9).search('');
+            tabla.column(10).search(estadoServicio).draw();
+        });
     })
 </script>

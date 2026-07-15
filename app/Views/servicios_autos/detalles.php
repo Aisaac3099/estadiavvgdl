@@ -56,7 +56,11 @@ if (!empty($servicio['proximo_servicio'])) {
                 <?php if (!empty($servicio['proximo_servicio'])): ?><?= date('d/m/Y', strtotime($servicio['proximo_servicio'])) ?><?php else: ?><span class="badge badge-secondary">No aplica</span><?php endif; ?>
             </p>
             <p><strong>Estado Próximo Servicio:</strong>
-                <span class="badge <?= $badgeProximo ?>"><?= $estadoProximo ?><?= $diasRestantes !== null ? ' ('.abs($diasRestantes).' días)' : '' ?></span>
+                <?php if (empty($servicio['proximo_servicio'])): ?>
+                    <span class="text-muted">—</span>
+                <?php else: ?>
+                    <span class="badge <?= $badgeProximo ?>"><?= $estadoProximo ?><?= $diasRestantes !== null ? ' ('.abs($diasRestantes).' días)' : '' ?></span>
+                <?php endif; ?>
             </p>
         </div></div>
         <div class="card"><div class="card-header"><h3 class="card-title">Evidencias</h3></div><div class="card-body">
