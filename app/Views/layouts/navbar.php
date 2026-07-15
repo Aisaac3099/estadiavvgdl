@@ -39,12 +39,14 @@
           <i class="far fa-bell"></i>
           <span class= "badge badge-danger navbar-badge"><?=$totalNotificaciones > 99 ? '99+' : $totalNotificaciones?></span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <!-- Isaac Gonzalez Agrego para notificaciones: ajustar la bandeja para contener textos largos sin ocultar información -->
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right bandeja-notificaciones">
           <span class="dropdown-item dropdown-header">
             <?= $totalNotificaciones?> Notificaciones
           </span>
           <div class="dropdown-divider"></div>
           
+          <div class="notificaciones-lista">
           <?php if (!empty($notificaciones)):?>
             <?php foreach ($notificaciones as $notificacion):?>
               <?php
@@ -55,29 +57,33 @@
                 'servicios_autos' =>'Servicios de Autos',
                 default => 'General'
               }; ?>
-              <a href="<?= esc($notificacion['url'])?>" class="dropdown-item">
-              <div class="mb-1">
+              <a href="<?= esc($notificacion['url'])?>" class="dropdown-item notificacion-item">
+              <div class="mb-1 notificacion-etiqueta">
                 <span class="badge badge-<?=esc($notificacion['color'])?>">
                   <?=esc($nombreModulo)?>
                 </span>
               </div>
-              <div>
-                <i class="<?= esc($notificacion['icono'])?> mr-2 text-<?=esc($notificacion['color'])?>"></i>
-                <strong><?=esc($notificacion['titulo'])?></strong>
+              <div class="d-flex notificacion-encabezado">
+                <i class="<?= esc($notificacion['icono'])?> mr-2 mt-1 text-<?=esc($notificacion['color'])?>"></i>
+                <div class="notificacion-contenido">
+                  <div class="d-flex flex-wrap justify-content-between notificacion-meta">
+                    <strong class="notificacion-titulo"><?=esc($notificacion['titulo'])?></strong>
+                    <span class="text-muted text-sm notificacion-fecha">
+                      <?= esc(tiempoNotificacion($notificacion['fecha']))?>
+                    </span>
+                  </div>
+                  <small class="text-muted notificacion-mensaje">
+                    <?=esc($notificacion['mensaje'])?>
+                  </small>
+                </div>
               </div>
-                <span class="float-right text-muted text-sm">
-                  <?= esc(tiempoNotificacion($notificacion['fecha']))?>
-                </span>
-                <br>
-                <small class="text-muted">
-                  <?=esc($notificacion['mensaje'])?>
-                </small>
               </a>
               <div class="dropdown-divider"></div>
               <?php endforeach;?>
               <?php else:?>
                 <span class="dropdown-item text-center text-muted">No Hay Notificaciones.</span>
                 <?php endif;?>
+          </div>
           
         </div>
       </li>
@@ -94,5 +100,74 @@
     </ul>
   </nav>
   <!-- /.navbar -->
+
+  <style>
+    /* Isaac Gonzalez Agrego para notificaciones: ajustar la bandeja para contener textos largos sin ocultar información */
+    .bandeja-notificaciones {
+      width: 380px;
+      max-width: calc(100vw - 20px);
+      overflow-x: hidden;
+    }
+
+    .bandeja-notificaciones .dropdown-header {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .notificaciones-lista {
+      max-height: 70vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .notificacion-item {
+      white-space: normal;
+      overflow: hidden;
+    }
+
+    .notificacion-encabezado,
+    .notificacion-meta {
+      min-width: 0;
+    }
+
+    .notificacion-contenido {
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .notificacion-titulo,
+    .notificacion-fecha,
+    .notificacion-mensaje,
+    .notificacion-etiqueta {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .notificacion-titulo {
+      min-width: 0;
+      max-width: 100%;
+      padding-right: .5rem;
+    }
+
+    .notificacion-fecha {
+      margin-left: auto;
+    }
+
+    .notificacion-mensaje {
+      display: block;
+      width: 100%;
+      margin-top: .25rem;
+    }
+
+    @media (max-width: 576px) {
+      .bandeja-notificaciones {
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+      }
+    }
+  </style>
 
 
