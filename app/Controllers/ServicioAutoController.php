@@ -38,8 +38,22 @@ class ServicioAutoController extends BaseController
         $porVencer = 0;
         $vigentes = 0;
         $noAplica =0;
+        $materialComprado = 0;
+        $enProceso = 0;
+        $realizados = 0;
+        $cancelados = 0;
         
         foreach ($data ['servicios']as $servicio){
+            if (($servicio['estado_servicio'] ?? null) === 'material_comprado') {
+                $materialComprado++;
+            } elseif (($servicio['estado_servicio'] ?? null) === 'en_proceso') {
+                $enProceso++;
+            } elseif (($servicio['estado_servicio'] ?? null) === 'realizado') {
+                $realizados++;
+            } elseif (($servicio['estado_servicio'] ?? null) === 'cancelado') {
+                $cancelados++;
+            }
+
             if (empty($servicio['proximo_servicio'])){
                 $noAplica++;
             }else{
@@ -59,6 +73,10 @@ class ServicioAutoController extends BaseController
         $data['porVencer'] = $porVencer;
         $data['vigentes'] = $vigentes;
         $data['noAplica'] = $noAplica;
+        $data['materialComprado'] = $materialComprado;
+        $data['enProceso'] = $enProceso;
+        $data['realizados'] = $realizados;
+        $data['cancelados'] = $cancelados;
 
         return view ('servicios_autos/index', $data);
     }
@@ -92,6 +110,8 @@ class ServicioAutoController extends BaseController
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
         $data['esPendiente'] = ($data['servicio']['tipo_registro']=='por_asignar');
+        $data['esRealizarMaterialComprado'] = (!$data['esPendiente'] && ($data['servicio']['estado_servicio'] ?? null) === 'material_comprado');
+        $data['esModoRealizar'] = ($data['esPendiente'] || $data['esRealizarMaterialComprado']);
         $data['evidencias'] = $this->evidenciaModel->where('servicio_auto_id', $id)->findAll();
         return view('servicios_autos/edit', $data);
     }
