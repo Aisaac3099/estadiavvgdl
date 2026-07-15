@@ -45,7 +45,7 @@
             <?php endif;?>
             <h5 class="mb-2">Estado del próximo servicio</h5>
             <div class="row"><!--Inicio Vista de estados-->
-                <div class="col-lg-2 col-6">
+                <div class="col-lg-3 col-6">
                     <div class="small-box bg-info filtro-card" data-estado="" style="cursor:pointer;">
                         <div class="inner">
                             <h3><?= $totalServicios?></h3>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="col-lg-2 col-6">
+                    <div class="col-lg-3 col-6">
                     <div class="small-box bg-success filtro-card" data-estado="Vigente" style="cursor:pointer;">
                         <div class="inner">
                             <h3><?= $vigentes?></h3>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="col-lg-2 col-6">
+                    <div class="col-lg-3 col-6">
                     <div class="small-box bg-warning filtro-card" data-estado="Por Vencer" style="cursor:pointer;">
                         <div class="inner">
                             <h3><?= $porVencer?></h3>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="col-lg-2 col-6">
+                    <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger filtro-card" data-estado="Vencido" style="cursor:pointer;">
                         <div class="inner">
                             <h3><?= $vencidos?></h3>

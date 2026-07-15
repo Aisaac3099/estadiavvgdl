@@ -16,7 +16,9 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://vvgdl-server:8080/sistema/';
+
+    // MODIFICAR ESTE ANTES DE VER EN EL SISTEMA
+    public string $baseURL = 'http://localhost/sistema/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
