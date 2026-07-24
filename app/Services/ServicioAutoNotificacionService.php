@@ -47,6 +47,7 @@ private function construirNotificacion($servicio)
                 'icono' => 'fas fa-exclamation-triangle',
                 'color' => 'danger',
                 'fecha' => $servicio['proximo_servicio'],
+                //'fecha_texto' => abs($diasRestantes) === 1 ? 'Vencido hace 1 dia' : 'Vencido hace ' . abs($diasRestantes) . ' dias',
                 'dinamica' => true];
             } return[
                 'id' => 'servicio-por-vencer-' . $servicio['id'],
@@ -57,6 +58,7 @@ private function construirNotificacion($servicio)
                 'icono' => 'fas fa-clock',
                 'color' => 'warning',
                 'fecha' => $servicio['proximo_servicio'],
+                //'fecha_texto' => abs($diasRestantes) === 0 ? 'Vence hoy' : ($diasRestantes === 1 ? 'Vence mañana' : 'Vence en ' . $diasRestantes . ' dias'),
                 'dinamica' => true];
             
         }

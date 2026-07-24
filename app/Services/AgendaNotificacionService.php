@@ -73,7 +73,7 @@ class AgendaNotificacionService
          $db = \Config\Database::connect();
 
         $hoy = date('Y-m-d');
-        $desde =date('Y-m-d', strtotime('-15 days'));
+        $desde =date('Y-m-d', strtotime('-60 days'));
 
         return $db->table('agenda a')->select(
         'a.id,
@@ -96,7 +96,7 @@ class AgendaNotificacionService
                 return [
                 'id' => 'agenda-atrasada-'. $agenda['id'], 
                 'titulo'=> 'Servicio atrasado', 
-                'mensaje' => $agenda['nombre_cliente'] . ' - ' . $agenda['servicio_descripcion'] . ' debio realizarse hace' . $diasAtraso . ' dias.', 
+                'mensaje' => $agenda['nombre_cliente'] . ' - ' . $agenda['servicio_descripcion'] . ' debio realizarse hace ' . $diasAtraso . ' dias.', 
                 'modulo' => 'agenda',
                 'url' => base_url('editAgenda/' . $agenda['id']),
                 'icono' => 'fas fa-exclamation-triangle',

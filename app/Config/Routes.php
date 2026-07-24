@@ -131,8 +131,12 @@ $routes->group('', ['filter' => 'auth'], function($routes){
     $routes->get('inventario/baja/(:num)', 'InventarioController::baja/$1');
     $routes->get('inventario/reactivar/(:num)', 'InventarioController::reactivar/$1');
     $routes->get('inventario/eliminar-foto/(:num)', 'InventarioController::eliminarFoto/$1');
+    //Inventario Movimientos(inventario-tecnicos)
+    $routes->get('inventario/movimientos', 'InventarioMovimientoController::index');
+    $routes->post('inventario/movimientos/guardar', 'InventarioMovimientoController::store');
 
 
     // rutas notificaciones
     $routes->get('notificaciones/leer/(:num)', 'NotificacionController::leer/$1');
+
 });

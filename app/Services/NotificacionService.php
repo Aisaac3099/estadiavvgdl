@@ -41,8 +41,8 @@ class NotificacionService
         usort ($notificaciones, function ($a, $b){
             return strtotime ($b['fecha']) <=> strtotime($a['fecha']);
         });
-        //mostrar maximo 10
-        return array_slice($notificaciones, 0, 10);
+        //mostrar maximo 20
+        return array_slice($notificaciones, 0, 20);
 
     }
 

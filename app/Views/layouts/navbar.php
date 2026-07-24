@@ -68,9 +68,11 @@
                 <div class="notificacion-contenido">
                   <div class="d-flex flex-wrap justify-content-between notificacion-meta">
                     <strong class="notificacion-titulo"><?=esc($notificacion['titulo'])?></strong>
+                    <?php if (empty($notificacion['dinamica'])):?>
                     <span class="text-muted text-sm notificacion-fecha">
                       <?= esc(tiempoNotificacion($notificacion['fecha']))?>
                     </span>
+                    <?php endif;?>
                   </div>
                   <small class="text-muted notificacion-mensaje">
                     <?=esc($notificacion['mensaje'])?>

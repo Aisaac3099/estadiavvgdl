@@ -1,4 +1,6 @@
  <?php $session = session(); ?>
+
+
   
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -81,6 +83,48 @@
             </a>  
           </li>
 
+          <!-- Isaac Gonzalez Agrego para inventario: acceso directo al módulo desde la barra lateral -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-boxes"></i>
+              <p>
+                Inventario
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('inventario')?>" class="nav-link">
+                  <i class="fas fa-clipboard-list nav-icon"></i>
+                  <p>Registro de Inventario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('inventario/movimientos')?>" class="nav-link">
+                  <i class="fas fa-exchange-alt nav-icon"></i>
+                  <p>Movimientos</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?= base_url('tecnicos') ?>" class="nav-link">   
+              <i class="fas fa-hard-hat"></i>  
+              <p>
+                Tecnicos
+              </p>
+            </a>  
+          </li> 
+          <li class="nav-item">
+            <a href="<?= base_url('usuarios') ?>" class="nav-link">
+              <i class="fas fa-users"></i>  
+              <p>
+                Usuarios
+              </p>
+            </a>  
+          </li> 
+          
+<!-- Isaac Gonzalez Agrego para servicios de autos: acceso directo al módulo desde la barra lateral -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">   
               <i class="fas fa-car"></i>  
@@ -101,33 +145,6 @@
               </li>
             </ul>
           </li>
-
-          <!-- Isaac Gonzalez Agrego para inventario: acceso directo al módulo desde la barra lateral -->
-          <li class="nav-item">
-            <a href="<?= base_url('inventario') ?>" class="nav-link">
-              <i class="fas fa-boxes"></i>
-              <p>
-                Inventario
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="<?= base_url('tecnicos') ?>" class="nav-link">   
-              <i class="fas fa-hard-hat"></i>  
-              <p>
-                Tecnicos
-              </p>
-            </a>  
-          </li> 
-          <li class="nav-item">
-            <a href="<?= base_url('usuarios') ?>" class="nav-link">
-              <i class="fas fa-users"></i>  
-              <p>
-                Usuarios
-              </p>
-            </a>  
-          </li> 
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

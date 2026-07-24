@@ -12,7 +12,20 @@
 <tr><th>Alias</th><td><?= $mostrar($item['alias']) ?></td></tr>
 <tr><th>Marca</th><td><?= $mostrar($item['marca']) ?></td></tr>
 <tr><th>Modelo</th><td><?= $mostrar($item['modelo']) ?></td></tr>
+<tr><th>Descripcion</th><td><?=$mostrar($item['descripcion'] ?? null)?></td></tr>
 <tr><th>Cantidad</th><td><?= esc($item['cantidad']) ?></td></tr>
+
+<tr><th>Tipo de control</th>
+<td>
+    <?php if (($item['tipo_control'] ?? '') === 'retornable'):?>
+        <span class="badge badge-info">Retornable</span>
+        <?php elseif (($item['tipo_control'] ?? '') === 'consumible'):?>
+            <span class="badge badge-warning">Consumible</span>
+            <?php else:?>
+                <span class="text-muted">Sin clasificar</span>
+                <?php endif;?>
+</td></tr>
+
 <tr><th>Ubicación</th><td>B<?= esc($item['bodega']) ?>-A<?= esc($item['anaquel']) ?>-N<?= esc($item['nivel']) ?></td></tr>
 <tr><th>Estado</th><td><span class="badge badge-<?= (int) $item['activo'] === 1 ? 'success' : 'secondary' ?>"><?= (int) $item['activo'] === 1 ? 'Activo' : 'Inactivo' ?></span></td></tr>
 <tr><th>Fecha de registro</th><td><?= $mostrar($item['created_at']) ?></td></tr>

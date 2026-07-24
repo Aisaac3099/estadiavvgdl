@@ -12,11 +12,13 @@ class InventarioModel extends Model
         'alias',
         'marca',
         'modelo',
+        'descripcion',
         'cantidad',
         'bodega',
         'anaquel',
         'nivel',
         'activo',
+        'tipo_control'
     ];
 
     protected $useTimestamps = true;
